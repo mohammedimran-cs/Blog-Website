@@ -45,7 +45,7 @@ const SinglePage = () => {
 
         getPostById(); 
 
-    }, []);  
+    }, [id, setSinglePostData]);  
 
     const handleBackIcon = () => {
        navigate('/');
@@ -62,7 +62,7 @@ const SinglePage = () => {
 
     return (
         <>
-        {!singlePostData.id? (<h1>No data here</h1>) : (
+        {!singlePostData.id? (<h1></h1>) : (
         <div className='singlePost-container'>
 
             <div className='image-container'>
