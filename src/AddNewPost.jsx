@@ -44,7 +44,7 @@ const AddNewPost = () => {
       },3000);
       }, []);
 
-    const addPost = () => {z
+    const addPost = () => {
         const insertData = async () => {
 
             const currentDate = new Date();

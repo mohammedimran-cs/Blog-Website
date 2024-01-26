@@ -9,7 +9,7 @@ const AddNewBtn = () => {
     const { setSinglePostData } = useContext(MyContext);
     const handleClick = () => {
         setSinglePostData({id : '', title : '', body : '', image : '' , publishedDate : ''});
-        navigate('/new');z
+        navigate('/new');
     }
   return (
    <button className='add-btn' onClick={handleClick}>Add New</button>
