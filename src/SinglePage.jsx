@@ -62,7 +62,7 @@ const SinglePage = () => {
 
     return (
         <>
-        {!singlePostData.id? (<h1></h1>) : (
+        {!singlePostData.id? (<h6>No data here</h6>) : (
         <div className='singlePost-container'>
 
             <div className='image-container'>
