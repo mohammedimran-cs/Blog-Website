@@ -1,30 +1,3 @@
-// import React, { useContext } from 'react'
-// import './form.css'
-// import { useParams } from 'react-router-dom'
-// import { MyContext } from './MyContext';
-
-// const Form = () => {
-//     const {id} = useParams();
-//     const { singlePostData, setSinglePostData } = useContext(MyContext);
-
-//     console.log(id);
-//   return (
-//     <div className='form-container'>
-//     <form>
-//         <label>Title </label><br />
-//         <input type='text' value={singlePostData.title}/><br />
-//         <label>content</label><br />
-//         <textarea type='text-area' rows="4" value={singlePostData.body}/><br />
-//         <label>Image </label><br />
-//         <input type='text' value={singlePostData.image} />
-//         <div><button>Save</button></div>
-//     </form>
-//     </div>
-//   )
-// }
-
-// export default Form
-
 import React, { useContext, useEffect} from 'react';
 import './form.css';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -71,7 +44,7 @@ const Form = () => {
         };
 
         getPostById(); 
-    },[]);
+    },[id,setSinglePostData]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;

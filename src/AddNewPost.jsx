@@ -28,11 +28,10 @@ const AddNewPost = () => {
           if (Array.isArray(responseData)) {
             // console.log(responseData);
             setPosts(responseData);
-            setCheck( posts.length > 0);
+            setCheck( responseData.length > 0);
           } 
           else {
             console.error('Invalid response data. Expected an array.');
-            setCheck( posts.length > 0);
           }
           }
         catch (error) {
@@ -42,7 +41,7 @@ const AddNewPost = () => {
       setTimeout(() => {
         load();
       },3000);
-      }, []);
+      }, [setCheck, setPosts]);
 
     const addPost = () => {
         const insertData = async () => {

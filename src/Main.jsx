@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { MyContext } from './MyContext';
 import axiosInstance from './api';
 import Post from './Post';
@@ -18,11 +18,10 @@ const Main = () => {
       if (Array.isArray(responseData)) {
         // console.log(responseData);
         setPosts(responseData);
-        setCheck( posts.length > 0);
+        setCheck( responseData > 0);
       } 
       else {
         console.error('Invalid response data. Expected an array.');
-        setCheck( posts.length > 0);
       }
       }
     catch (error) {
@@ -33,7 +32,7 @@ const Main = () => {
     load();
   },3000);
   // load();
-  }, []);
+  }, [setCheck, setPosts]);
 
   return (
     <>
