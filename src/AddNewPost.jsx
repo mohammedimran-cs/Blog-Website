@@ -31,12 +31,12 @@ const AddNewPost = () => {
             setCheck( posts.length > 0);
           } 
           else {
-            // console.error('Invalid response data. Expected an array.');
+            console.error('Invalid response data. Expected an array.');
             setCheck( posts.length > 0);
           }
           }
         catch (error) {
-          // console.error('Error fetching data:', error);
+          console.error('Error fetching data:', error);
         }
       }
       setTimeout(() => {
@@ -44,7 +44,7 @@ const AddNewPost = () => {
       },3000);
       }, []);
 
-    const addPost = () => {
+    const addPost = () => {z
         const insertData = async () => {
 
             const currentDate = new Date();
@@ -59,7 +59,7 @@ const AddNewPost = () => {
             const formattedDate = currentDate.toLocaleDateString('en-US', options);
 
             // Log the result
-            // console.log(`${formattedDate} typeof : `+typeof formattedDate);
+            console.log(`${formattedDate} typeof : `+typeof formattedDate);
 
             if(posts.length > 0){
             var postLength = posts.length-1;
@@ -78,10 +78,10 @@ const AddNewPost = () => {
 
                 const response = await axiosInstance.post('/posts/',newData);
                 const data = await response.data;
-                // console.log(data);
+                console.log(data);
             }
             catch(error) {
-                // console.log("error in add new post : " +error);
+                console.log("error in add new post : " +error);
             }
         }
         insertData();

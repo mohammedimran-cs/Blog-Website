@@ -35,7 +35,7 @@ import FormComponent from './FormComponent';
 const Form = () => {
 
     const {id} = useParams();
-    // console.log(typeof id);
+    console.log(typeof id);
     const postId = parseInt(id);
     const navigate = useNavigate();
 
@@ -62,11 +62,11 @@ const Form = () => {
                     });
                 } 
                 else {
-                    // console.log("Invalid data:", data);
+                    console.log("Invalid data:", data);
                 }
 
             } catch (error) {
-                // console.log("Error fetching data:", error);
+                console.log("Error fetching data:", error);
             }
         };
 
@@ -85,7 +85,7 @@ const Form = () => {
         try{
         const response = await axiosInstance.put(`/posts/${postId}`,singlePostData);
         const data =  await response.data;
-        // console.log(data);
+        console.log(data);
         // setSinglePostData({id : '', title : '', body : '', image : '' , publishedDate : ''});
         }
         catch(error) {

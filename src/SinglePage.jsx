@@ -14,7 +14,7 @@ const SinglePage = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        // console.log("in useEffect")
+        console.log("in useEffect")
         const getPostById = async () => {
             try {
                 let response = await axiosInstance.get(`/posts`, {
@@ -35,11 +35,11 @@ const SinglePage = () => {
                     });
                 } 
                 else {
-                    // console.log("Invalid data:", data);
+                    console.log("Invalid data:", data);
                 }
 
             } catch (error) {
-                // console.log("Error fetching data:", error);
+                console.log("Error fetching data:", error);
             }
         };
 
@@ -55,7 +55,7 @@ const SinglePage = () => {
 
             const response = await axiosInstance.delete(`/posts/${id}`);
             const data = await response.data;
-            // console.log(data);
+            console.log(data);
             setSinglePostData({id : '', title : '', body : '', image : '' , publishedDate : ''});
             navigate(-1);
     }

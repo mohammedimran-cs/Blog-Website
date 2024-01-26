@@ -21,12 +21,12 @@ const Main = () => {
         setCheck( posts.length > 0);
       } 
       else {
-        // console.error('Invalid response data. Expected an array.');
+        console.error('Invalid response data. Expected an array.');
         setCheck( posts.length > 0);
       }
       }
     catch (error) {
-      // console.error('Error fetching data:', error);
+      console.error('Error fetching data:', error);
     }
   }
   setTimeout(() => {
